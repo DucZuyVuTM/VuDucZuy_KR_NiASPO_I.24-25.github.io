@@ -1,5 +1,3 @@
-version: '3.1'
-
 services:
   backend:
     build:
@@ -9,8 +7,6 @@ services:
       - "5000:5000"
     environment:
       KAFKA_BROKER: kafka:9092
-    networks:
-      - default  # Sử dụng default network
 
   frontend:
     build:
@@ -18,8 +14,6 @@ services:
     container_name: frontend
     ports:
       - "3000:80"
-    networks:
-      - default  # Sử dụng default network
 
   database:
     image: postgres:latest
@@ -30,8 +24,6 @@ services:
       POSTGRES_DB: covid19
     ports:
       - "5432:5432"
-    networks:
-      - default  # Sử dụng default network
 
   nginx:
     build:
@@ -39,9 +31,5 @@ services:
     container_name: nginx
     ports:
       - "81:81"
-    networks:
-      - default  # Sử dụng default network
     depends_on:
       - frontend
-
-# Không cần khai báo app-network ở đây nữa
