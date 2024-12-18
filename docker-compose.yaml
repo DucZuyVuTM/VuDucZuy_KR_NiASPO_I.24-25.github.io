@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   backend:
     build:
@@ -10,7 +12,7 @@ services:
     environment:
       KAFKA_BROKER: kafka:9092
     networks:
-      - app-network
+      - default  # Sử dụng default network
 
   frontend:
     build:
@@ -19,7 +21,7 @@ services:
     ports:
       - "3000:80"
     networks:
-      - app-network
+      - default  # Sử dụng default network
 
   database:
     image: postgres:latest
@@ -31,7 +33,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - app-network
+      - default  # Sử dụng default network
 
   nginx:
     build:
@@ -40,10 +42,8 @@ services:
     ports:
       - "81:81"
     networks:
-      - app-network
+      - default  # Sử dụng default network
     depends_on:
       - frontend
-    
-networks:
-  app-network:
-    driver: bridge
+
+# Không cần khai báo app-network ở đây nữa
