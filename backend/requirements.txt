@@ -1,0 +1,6 @@
+Flask
+pandas
+kafka-python
+pybreaker
+psycopg2-binary
+sqlalchemy

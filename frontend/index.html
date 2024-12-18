@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data and Graph</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>COVID-19 in Vietnam</h1>
+    <h2>Show Data</h2>
+    <button onclick="fetchData()">Fetch Data</button>
+    <pre id="data"></pre>
+
+    <h2>Graphs</h2>
+    <button onclick="performGraph()">Perform Graph</button>
+    <div class="chart" style="display: none;" id="chartContainer">
+        <div>
+            <canvas id="chartConfirmed" width="400" height="200"></canvas>
+        </div>
+        <div>
+            <canvas id="chartRecovered" width="400" height="200"></canvas>
+        </div>
+        <div>
+            <canvas id="chartDeaths" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <h2>Send Data to PostgreSQL</h2>
+    <button onclick="sendData()">Send Data</button>
+    <!-- Đảm bảo Chart.js được tải trước -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Sau đó mới tải app.js -->
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and font for the body */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Style for the main heading */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+/* Style for subheadings */
+h2 {
+    margin: 20px 0 10px;
+    color: #2980b9;
+}
+
+/* Style for buttons */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Style for the preformatted text */
+pre {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Style for each chart canvas */
+.chart div {
+    width: 100%; /* Allow the chart to grow and shrink, with a minimum width of 300px */
+    margin: 10px 0; /* Add some margin between charts */
+}
+
+canvas {
+    width: 100% !important; /* Make canvas take full width of its container */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+.toggle {
+    display: none;
+}
